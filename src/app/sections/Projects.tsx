@@ -1,12 +1,12 @@
 
 import { motion } from "motion/react";
 import { ExternalLink, Github } from "lucide-react";
+
 import statuQuoniam from "../../images/statu-quoniam.jpg";
 import nodeSqlite from "../../images/node-sqlite.jpeg";
 import pokemon from "../../images/pokemon.jpg";
 import encertaParaula from "../../images/encerta-paraula.jpeg";
 import restaurant from "../../images/restaurant.jpeg";
-
 
 const projects = [
   {
@@ -15,6 +15,7 @@ const projects = [
       "Multi-page website for a music project, featuring artist biographies, photo galleries, music videos, discography, concerts and contact information.",
     technologies: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/SergioCordero77/StatuQuoniamWebsite",
+    live: "https://sergiocordero77.github.io/StatuQuoniamWebsite/",
     image: statuQuoniam,
   },
   {
@@ -23,6 +24,7 @@ const projects = [
       "Backend application to manage artists, albums and songs. Includes CRUD operations, relational SQLite database and REST API endpoints.",
     technologies: ["Node.js", "Express", "SQLite", "REST API"],
     github: "https://github.com/SergioCordero77/nodeSqlite",
+    live: null,
     image: nodeSqlite,
   },
   {
@@ -31,6 +33,7 @@ const projects = [
       "Interactive Pokémon browser using the PokéAPI. Fetches external data, displays Pokémon cards and supports pagination and detail views.",
     technologies: ["JavaScript", "HTML", "CSS", "Fetch API"],
     github: "https://github.com/SergioCordero77/BuscadorPokemons",
+    live: "https://sergiocordero77.github.io/BuscadorPokemons/",
     image: pokemon,
   },
   {
@@ -39,6 +42,7 @@ const projects = [
       "Interactive word guessing game with one-player and two-player modes, input validation, player statistics and saved high scores.",
     technologies: ["JavaScript", "HTML", "CSS", "LocalStorage"],
     github: "https://github.com/SergioCordero77/Encerta_Paraula",
+    live: "https://sergiocordero77.github.io/Encerta_Paraula/",
     image: encertaParaula,
   },
   {
@@ -47,6 +51,7 @@ const projects = [
       "Responsive restaurant website with navigation, restaurant information, menu presentation, gallery and CSS hover animations.",
     technologies: ["HTML", "CSS", "Responsive Design"],
     github: "https://github.com/SergioCordero77/DIW_Maquetacio",
+    live: "https://sergiocordero77.github.io/DIW_Maquetacio/",
     image: restaurant,
   },
 ];
@@ -118,7 +123,8 @@ export function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4">
+                {/* Project links */}
+                <div className="flex items-center justify-between w-full">
                   <a
                     href={project.github}
                     target="_blank"
@@ -128,6 +134,18 @@ export function Projects() {
                     <Github size={16} />
                     Source Code
                   </a>
+
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-primary hover:opacity-80 transition-opacity"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.article>
