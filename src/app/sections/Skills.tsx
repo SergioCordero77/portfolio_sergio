@@ -18,12 +18,16 @@ export function Skills() {
       skills: [
         "SQL",
         "MySQL",
+        "JOIN queries",
+        "CRUD operations",
+        "basic relational database modelling",
       ],
     },
     {
       category: "Tools & AI",
       skills: [
         "Git",
+        "GitHub",
         "Linux Terminal",
         "Visual Studio Code",
         "ChatGPT",
@@ -43,6 +47,7 @@ export function Skills() {
     "Object-Oriented Programming (OOP)",
     "AI-assisted Development",
     "Problem Solving",
+    "Analytical thinking",
     "Responsive Design",
   ];
 
